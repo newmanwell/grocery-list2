@@ -18,8 +18,18 @@ logNames(groceryList);
 
 // getUpperCaseNames function
 const getUpperCaseNames = (array) => {
-  const upperArray = array.map((array) => array.name.toUpperCase())
+  // assign const, use map and pass in array, use dot notation and toUpperCase
+  const upperArray = array.map((array) => array.name.toUpperCase());
   console.log(upperArray);
 }
 
 getUpperCaseNames(groceryList);
+
+// getItemById
+const getItemById = (array) => {
+  // assign const, use find and pass in array, you dot notation to find an id number (and to test IDs at random use math.ceil and math.random)
+  const foundId = array.find((array) => array.id === Math.ceil(Math.random() * 8));
+  console.log(foundId);
+}
+
+getItemById(groceryList);
