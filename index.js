@@ -20,10 +20,11 @@ logNames(groceryList);
 const getUpperCaseNames = (array) => {
   // assign const, use map and pass in array, use dot notation and toUpperCase
   const upperArray = array.map((array) => array.name.toUpperCase());
-  console.log(upperArray);
+  return upperArray;
 }
 
-getUpperCaseNames(groceryList);
+const shoutedArray = getUpperCaseNames(groceryList);
+console.log(shoutedArray);
 
 // getItemById function
 const getItemById = (array, idNum) => {
@@ -77,3 +78,20 @@ const countItems = (array) => {
 
 const totalItems = countItems(groceryList);
 console.log(totalItems);
+
+// calculateTotalPrice function
+const calculateTotalPrice = (array) => {
+  // create empty array
+  const priceArray = [];
+  // loop through array
+  for (let i = 0; i < array.length; i++) {
+    // push the quanity value * price value
+    priceArray.push(array[i].price * array[i].quantity);
+  }
+  // use reduce to add the total price of the now full array
+  const totalPrice = priceArray.reduce((acc, cur) => acc + cur, 0);
+  return totalPrice;
+}
+
+const totalBill = calculateTotalPrice(groceryList);
+console.log(totalBill);
