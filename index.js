@@ -26,13 +26,13 @@ const getUpperCaseNames = (array) => {
 getUpperCaseNames(groceryList);
 
 // getItemById function
-const getItemById = (array) => {
-  // assign const, use find and pass in array, you dot notation to find an id number (and to test IDs at random use math.ceil and math.random)
-  const foundId = array.find((array) => array.id === Math.ceil(Math.random() * 8));
+const getItemById = (array, idNum) => {
+  // assign const, use find and pass in array, you dot notation to find an id number
+  const foundId = array.find((array) => array.id === idNum);
   console.log(foundId);
 }
-
-getItemById(groceryList);
+//                       passing in a random number for testing
+getItemById(groceryList, Math.ceil(Math.random() * 8));
 
 // getItemPriceByName function
 const getItemPriceByName = (array, foodName) => {
@@ -50,3 +50,13 @@ const getItemPriceByName = (array, foodName) => {
 
 const itemPrice = getItemPriceByName(groceryList, "banana");
 console.log(itemPrice);
+
+// getItemsByCategory function 
+const getItemsByCategory = (array, categoryName) => {
+  // assign const, use filter method and pass in array and category string, add matched categories to array
+  const categoryArray = array.filter((array) => array.category === categoryName);
+  return categoryArray;
+}
+
+const filteredByCategory = getItemsByCategory(groceryList, "dairy");
+console.log(filteredByCategory);
