@@ -35,7 +35,6 @@ const getItemById = (array) => {
 getItemById(groceryList);
 
 // getItemPriceByName function
-
 const getItemPriceByName = (array, foodName) => {
   // loop through array
   for (let i = 0; i < array.length; i++) {
@@ -45,6 +44,7 @@ const getItemPriceByName = (array, foodName) => {
       return array[i].price;
     } 
   }
+  // seperate return if no food name matches
   return `Item not found`;
 }
 
