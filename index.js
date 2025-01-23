@@ -25,7 +25,7 @@ const getUpperCaseNames = (array) => {
 
 getUpperCaseNames(groceryList);
 
-// getItemById
+// getItemById function
 const getItemById = (array) => {
   // assign const, use find and pass in array, you dot notation to find an id number (and to test IDs at random use math.ceil and math.random)
   const foundId = array.find((array) => array.id === Math.ceil(Math.random() * 8));
@@ -33,3 +33,20 @@ const getItemById = (array) => {
 }
 
 getItemById(groceryList);
+
+// getItemPriceByName function
+
+const getItemPriceByName = (array, foodName) => {
+  // loop through array
+  for (let i = 0; i < array.length; i++) {
+    // compare index value to passed in food name
+    if (array[i].name === foodName) {
+      // return the price at the same index as the food name if matched
+      return array[i].price;
+    } 
+  }
+  return `Item not found`;
+}
+
+const itemPrice = getItemPriceByName(groceryList, "banana");
+console.log(itemPrice);
