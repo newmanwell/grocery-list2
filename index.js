@@ -15,3 +15,11 @@ const logNames = (array) => {
 }
 
 logNames(groceryList);
+
+// getUpperCaseNames function
+const getUpperCaseNames = (array) => {
+  const upperArray = array.map((array) => array.name.toUpperCase())
+  console.log(upperArray);
+}
+
+getUpperCaseNames(groceryList);
