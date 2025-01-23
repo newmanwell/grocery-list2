@@ -60,3 +60,20 @@ const getItemsByCategory = (array, categoryName) => {
 
 const filteredByCategory = getItemsByCategory(groceryList, "dairy");
 console.log(filteredByCategory);
+
+// countItems function
+const countItems = (array) => {
+  // create empty array
+  const quanityArray = [];
+  // Add quanity values to own array
+  for (let i = 0; i < array.length; i++) {
+    // push each value to the empty array
+    quanityArray.push(array[i].quantity);
+  }
+  // Use reduce to add the values of the now full array
+  const quanityCount = quanityArray.reduce((acc, cur) => acc + cur, 0)
+  return quanityCount;
+}
+
+const totalItems = countItems(groceryList);
+console.log(totalItems);
